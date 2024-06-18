@@ -1466,6 +1466,18 @@
     },
     {
       "category": "POSSIBLE_EXISTENCE",
+      "literal": "pending",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "to be reported",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
       "literal": "indefinite for",
       "pattern": [
         {
@@ -1503,6 +1515,7 @@
       "direction": "BACKWARD"
     },
     {
+      "category": "NEGATED_EXISTENCE",
       "literal": "are not seen",
       "pattern": [
         {
