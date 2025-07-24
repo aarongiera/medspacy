@@ -274,12 +274,13 @@
     },
     {
       "category": "NEGATED_EXISTENCE",
-      "literal": "can rule out",
+      "literal": "rule out",
       "pattern": [
         {
           "LOWER": {
             "IN": ["can", "did"]
-          }
+          },
+          "OP": "?"
         },
         {
           "LOWER": "rule"
@@ -411,6 +412,27 @@
           "LOWER": {
             "IN": ["for"]
           }
+        }
+      ],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "biopsy to rule out",
+        "pattern": [
+        {
+          "LOWER": {
+            "IN": ["biopsy", "bx"]
+          }
+        },
+        {
+          "LOWER": "to"
+        },
+        {
+          "LOWER": "rule"
+        },
+        {
+          "LOWER": "out"
         }
       ],
       "direction": "FORWARD"
@@ -568,8 +590,13 @@
     },
     {
       "category": "NEGATED_EXISTENCE",
-      "literal": "consistent with",
+      "literal": ", consistent with",
       "pattern": [
+        {
+          "LOWER": {
+            "IN": [";", ","]
+          }
+        },
         {
           "LOWER": "consistent"
         },
@@ -671,6 +698,18 @@
           "LOWER": "be"
         }
       ],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "enhance the detection of",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "was used to evaluate",
+      "pattern": null,
       "direction": "FORWARD"
     },
     {
@@ -1108,7 +1147,7 @@
     },
     {
       "category": "POSSIBLE_EXISTENCE",
-      "literal": "rule out",
+      "literal": "may rule out",
       "pattern": [
         {
           "LOWER": {
@@ -1362,7 +1401,8 @@
         {
           "LOWER": {
             "IN": ["was", "is", "are"]
-          }
+          },
+          "OP": "?"
         },
         {
           "LOWER": {
@@ -1370,7 +1410,8 @@
           }
         },
         {
-          "LOWER": "for"
+          "LOWER": "for",
+          "OP": "?"
         }
       ],
       "direction": "BIDIRECTIONAL"
@@ -1460,9 +1501,9 @@
     },
     {
       "category": "POSSIBLE_EXISTENCE",
-      "literal": "worried about",
+      "literal": "ordered",
       "pattern": null,
-      "direction": "FORWARD"
+      "direction": "BIDIRECTIONAL"
     },
     {
       "category": "POSSIBLE_EXISTENCE",
@@ -1473,7 +1514,17 @@
     {
       "category": "POSSIBLE_EXISTENCE",
       "literal": "to be reported",
-      "pattern": null,
+      "pattern": [
+        {
+          "LOWER": {"IN": ["to", "will"]}
+        },
+        {
+          "LOWER": "be"
+        },
+        {
+          "LOWER": "reported"
+        }
+      ],
       "direction": "BIDIRECTIONAL"
     },
     {
@@ -1494,13 +1545,13 @@
       "category": "NEGATED_EXISTENCE",
       "literal": ": none",
       "pattern": null,
-      "direction": "BACKWARD"
+      "direction": "BIDIRECTIONAL"
     },
     {
       "category": "NEGATED_EXISTENCE",
       "literal": ": no",
       "pattern": null,
-      "direction": "BACKWARD"
+      "direction": "BIDIRECTIONAL"
     },
     {
       "category": "NEGATED_EXISTENCE",
@@ -1534,6 +1585,12 @@
         }
       ],
       "direction": "BACKWARD"
+    },
+    {
+      "category": "NEGATED_EXISTENCE",
+      "literal": "absent",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
     },
     {
       "category": "HISTORICAL",
